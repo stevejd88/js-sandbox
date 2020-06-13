@@ -1,0 +1,36 @@
+body {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.doors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.door {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.random-peewee {
+  background-image: url("peewee.jpg");
+  box-shadow: 0 0 0 0 black;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: black;
+  z-index: 0;
+}
+
+.undisplay {
+  display: none;
+  width: 200px;
+  height: 200px;
+}
