@@ -3,6 +3,9 @@ const allDoors = document.querySelectorAll(".door");
 const overlay = document.querySelector(".overlay");
 const allOverlays = document.querySelectorAll(".overlay");
 
+const found = new Audio("./sounds/take-a-picture.mp3");
+const laugh = new Audio("./sounds/laugh.mp3");
+
 const n = Math.floor(Math.random() * allDoors.length);
 console.log(n);
 
@@ -15,8 +18,9 @@ doors.addEventListener("click", function (e) {
     if (e.target.parentNode.classList[1] === "random-peewee") {
       e.target.classList.remove("overlay");
       e.target.classList.add("undisplay");
-      // alert("You found me!");
+      found.play();
     } else {
+      laugh.play();
       setTimeout(() => {
         e.target.classList.add("overlay");
         e.target.classList.remove("undisplay");
