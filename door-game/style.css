@@ -1,18 +1,33 @@
 body {
+  font-family: georgia;
   text-align: center;
   margin: 0 auto;
+  background-color: #72bbbb;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 32px;
 }
 
 .doors {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .door {
   width: 200px;
   height: 200px;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .random-peewee {
@@ -33,4 +48,11 @@ body {
   display: none;
   width: 200px;
   height: 200px;
+}
+
+.refresh {
+  display: none;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 18px;
 }
