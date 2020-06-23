@@ -6,7 +6,7 @@ let count = 3;
 let won = false;
 
 const found = new Audio("./sounds/take-a-picture.mp3");
-const laugh = new Audio("./sounds/laugh.mp3");
+const laugh = new Audio("./sounds/laughing.mp3");
 
 const n = Math.floor(Math.random() * allDoors.length);
 
