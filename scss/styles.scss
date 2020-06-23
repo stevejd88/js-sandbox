@@ -13,16 +13,16 @@ h1 {
   font-family: "Gloria Hallelujah", cursive;
   color: $primary-color;
   background-color: $white;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
-  border: 20px solid $secondary-color;
+  border: 5px solid $secondary-color;
   border-radius: 0.35rem;
-  font-size: 3rem;
-  @include mq("sm") {
-    font-size: 2rem;
-    border: 5px solid $secondary-color;
-    width: 90%;
+  font-size: 2rem;
+  @include mq("md") {
+    font-size: 2.75rem;
+    border: 20px solid $secondary-color;
+    width: 80%;
   }
 }
 
@@ -32,14 +32,14 @@ p {
   padding: 1rem;
   background-color: $white;
   color: $primary-color;
-  border: 20px solid $tertiary-color;
+  border: 5px solid $tertiary-color;
   border-radius: 0.35rem;
-  width: 60%;
-  font-size: 1.5rem;
-  @include mq("sm") {
-    font-size: 1rem;
-    border: 5px solid $tertiary-color;
-    width: 70%;
+  width: 70%;
+  font-size: 1rem;
+  @include mq("md") {
+    font-size: 1.5rem;
+    border: 20px solid $tertiary-color;
+    width: 60%;
   }
 }
 
@@ -50,6 +50,9 @@ ul {
   margin-top: 1rem;
   padding: 1rem;
   width: 55%;
+  @include mq("md") {
+    font-size: 1.25rem;
+  }
 }
 
 li {
