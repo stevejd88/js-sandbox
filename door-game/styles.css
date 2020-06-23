@@ -1,0 +1,94 @@
+body {
+  font-family: georgia;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #72bbbb;
+}
+
+h1 {
+  font-size: 32px;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+
+p {
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  p {
+    font-size: 32px;
+  }
+}
+
+.doors {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .doors {
+    max-width: 700px;
+  }
+}
+
+.door {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .door {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.random-peewee {
+  background-image: url("peewee.jpg");
+  background-size: contain;
+  box-shadow: 0 0 0 0 black;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: black;
+  z-index: 0;
+}
+@media (min-width: 768px) {
+  .overlay {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.undisplay {
+  display: none;
+  width: 90px;
+  height: 90px;
+}
+@media (min-width: 768px) {
+  .undisplay {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.refresh {
+  display: none;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=styles.css.map */
