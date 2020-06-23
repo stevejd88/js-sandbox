@@ -1,5 +1,7 @@
+@import "./utilities.scss";
+
 body {
-  border: 20px solid #111d5e;
+  border: 20px solid $primary-color;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -9,19 +11,17 @@ body {
 
 h1 {
   font-family: "Gloria Hallelujah", cursive;
-  color: #111d5e;
-  background-color: #f3f3f3;
+  color: $primary-color;
+  background-color: $white;
   width: 80%;
   margin: 0 auto;
   margin-top: 1rem;
-  border: 20px solid #c70039;
+  border: 20px solid $secondary-color;
   border-radius: 0.35rem;
   font-size: 3rem;
-}
-@media (min-width: 320px) {
-  h1 {
+  @include mq("sm") {
     font-size: 2rem;
-    border: 5px solid #c70039;
+    border: 5px solid $secondary-color;
     width: 90%;
   }
 }
@@ -30,23 +30,21 @@ p {
   margin: 0 auto;
   margin-top: 2rem;
   padding: 1rem;
-  background-color: #f3f3f3;
-  color: #111d5e;
-  border: 20px solid #f37121;
+  background-color: $white;
+  color: $primary-color;
+  border: 20px solid $tertiary-color;
   border-radius: 0.35rem;
   width: 60%;
   font-size: 1.5rem;
-}
-@media (min-width: 320px) {
-  p {
+  @include mq("sm") {
     font-size: 1rem;
-    border: 5px solid #f37121;
+    border: 5px solid $tertiary-color;
     width: 70%;
   }
 }
 
 ul {
-  background-color: #ffbd69;
+  background-color: $quaternary-color;
   border-radius: 0.35rem;
   margin: 0 auto;
   margin-top: 1rem;
@@ -58,5 +56,3 @@ li {
   list-style-type: none;
   color: #111d5e;
 }
-
-/*# sourceMappingURL=styles.css.map */
