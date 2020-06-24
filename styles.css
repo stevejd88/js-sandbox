@@ -7,10 +7,26 @@ body {
   background-image: url("./img/sand.jpg");
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  nav {
+    justify-content: flex-end;
+  }
+}
+nav a {
+  margin-right: 0.75rem;
+}
+
 h1 {
   font-family: "Gloria Hallelujah", cursive;
   color: #111d5e;
   background-color: #f3f3f3;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
@@ -21,7 +37,7 @@ h1 {
 @media (min-width: 768px) {
   h1 {
     font-size: 2.75rem;
-    border: 20px solid #c70039;
+    border: 10px solid #c70039;
     width: 80%;
   }
 }
@@ -31,6 +47,7 @@ p {
   margin-top: 2rem;
   padding: 1rem;
   background-color: #f3f3f3;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   color: #111d5e;
   border: 5px solid #f37121;
   border-radius: 0.35rem;
@@ -40,7 +57,7 @@ p {
 @media (min-width: 768px) {
   p {
     font-size: 1.5rem;
-    border: 20px solid #f37121;
+    border: 10px solid #f37121;
     width: 60%;
   }
 }
@@ -48,6 +65,7 @@ p {
 ul {
   background-color: #ffbd69;
   border-radius: 0.35rem;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   margin: 0 auto;
   margin-top: 1rem;
   padding: 1rem;

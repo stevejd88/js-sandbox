@@ -9,10 +9,24 @@ body {
   background-image: url("./img/sand.jpg");
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5rem;
+  @include mq("md") {
+    justify-content: flex-end;
+  }
+  a {
+    margin-right: 0.75rem;
+  }
+}
+
 h1 {
   font-family: "Gloria Hallelujah", cursive;
   color: $primary-color;
   background-color: $white;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   width: 90%;
   margin: 0 auto;
   margin-top: 1rem;
@@ -21,7 +35,7 @@ h1 {
   font-size: 2rem;
   @include mq("md") {
     font-size: 2.75rem;
-    border: 20px solid $secondary-color;
+    border: 10px solid $secondary-color;
     width: 80%;
   }
 }
@@ -31,6 +45,7 @@ p {
   margin-top: 2rem;
   padding: 1rem;
   background-color: $white;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   color: $primary-color;
   border: 5px solid $tertiary-color;
   border-radius: 0.35rem;
@@ -38,7 +53,7 @@ p {
   font-size: 1rem;
   @include mq("md") {
     font-size: 1.5rem;
-    border: 20px solid $tertiary-color;
+    border: 10px solid $tertiary-color;
     width: 60%;
   }
 }
@@ -46,6 +61,7 @@ p {
 ul {
   background-color: $quaternary-color;
   border-radius: 0.35rem;
+  box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   margin: 0 auto;
   margin-top: 1rem;
   padding: 1rem;
