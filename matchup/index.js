@@ -77,16 +77,18 @@ function matchCheck(e) {
   twoParents = [];
   twoTiles = [];
 
+  if (match.length === 18) {
+    $(".game-rules").text("You win!");
+    $(".refresh").toggle("hide");
+  }
+
   if (chances === 0) {
-    $(".start-btn").removeClass("hide");
     for (const item of match) {
       item.classList.remove("rotate");
     }
     $(".game-rules").text("Better Luck next time!");
-    setTiles();
-    $(".start-btn").click(function () {
-      location.reload();
-    });
+    $(".refresh").toggle("hide");
+    $(".tile-container").toggle("hide");
   }
 }
 
@@ -110,5 +112,10 @@ tiles.addEventListener("click", function (e) {
 
 $(".start-btn").click(function () {
   setTiles();
-  $(".start-btn").addClass("hide");
+  $(".start-btn").toggle("hide");
+  $(".tile-container").toggle("hide");
+});
+
+$(".refresh").click(function () {
+  location.reload();
 });
