@@ -1,15 +1,94 @@
+@import "../scss/utilities.scss";
 @import "./starwarsFont/starwars.scss";
 
-body {
+.body1 {
   text-align: center;
+  letter-spacing: 1px;
+  color: white;
+  background-image: url("./img/space-background1.png");
+  font-family: "STARWARS";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.body2 {
+  text-align: center;
+  letter-spacing: 1px;
   color: white;
   background-image: url("./img/space-background1.png");
   font-family: "STARWARS";
 }
 
+.main-title {
+  letter-spacing: 1px;
+  @include mq("md") {
+    font-size: 65px;
+  }
+}
+
+header a {
+  color: #feda4a;
+  @include mq("md") {
+    font-size: 20px;
+  }
+}
+
+.crawl-container {
+  display: flex;
+  justify-content: center;
+  height: 800px;
+  perspective: 400px;
+  color: #feda4a;
+  font-family: "Pathway Gothic One", sans-serif;
+  font-size: 500%;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.crawl {
+  position: relative;
+  margin: 0 auto;
+  top: -100px;
+  transform-origin: 50% 100%;
+  animation: crawl 30s linear;
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+.update {
+  color: #feda4a;
+  font-size: 18px;
+  margin-bottom: 10px;
+  @include mq("md") {
+    font-size: 24px;
+  }
+}
+
+.refresh {
+  margin-bottom: 10px;
+}
+
 button {
   font-family: "STARWARS";
   padding: 0.5em;
+  border-radius: 10px;
+  border: 5px solid #feda4a;
+  @include mq("md") {
+    font-size: 24px;
+    padding: 16px;
+  }
 }
 
 .tiles {
@@ -17,18 +96,58 @@ button {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  @include mq("md") {
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  @include mq("lg") {
+    max-width: 950px;
+  }
+}
+
+img {
+  height: 90px;
+  width: 90px;
+  border-radius: 10px;
+  @include mq("sm-md") {
+    height: 80px;
+    width: 80px;
+  }
+  @include mq("md") {
+    height: 160px;
+    width: 160px;
+  }
+  @include mq("lg") {
+    height: 150px;
+    width: 150px;
+  }
 }
 
 .flip-card {
   background-color: transparent;
+  border-radius: 10px;
   width: 90px;
   height: 90px;
   perspective: 1000px;
   margin: 0.25rem;
+
+  @include mq("sm-md") {
+    height: 80px;
+    width: 80px;
+  }
+  @include mq("md") {
+    height: 160px;
+    width: 160px;
+  }
+  @include mq("lg") {
+    height: 150px;
+    width: 150px;
+  }
 }
 
 .flip-card-inner {
   position: relative;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -37,10 +156,6 @@ button {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-} */
-
 .rotate {
   transform: rotateY(180deg);
 }
@@ -48,6 +163,7 @@ button {
 .flip-card-front,
 .flip-card-back {
   position: absolute;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;

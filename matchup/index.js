@@ -27,6 +27,22 @@ const images = [
   "rebel"
 ];
 
+const theForce = new Audio("./sounds/the-force.mp3");
+const theme = new Audio("./sounds/theme.mp3");
+const cocky = new Audio("./sounds/cocky.mp3");
+const blasters = new Audio("./sounds/blasters.mp3");
+const amaze = new Audio("./sounds/amaze.mp3");
+const roar = new Audio("./sounds/roar.mp3");
+const strong = new Audio("./sounds/strong.mp3");
+
+const winSounds = [cocky, amaze, roar, strong];
+
+function randomWinSound() {
+  let n = Math.floor(Math.random() * winSounds.length);
+  const matchsound = winSounds[n].play();
+  return matchsound;
+}
+
 // func to to shuffle through images array
 function shuffle(arr) {
   var i = arr.length,
@@ -65,6 +81,7 @@ function matchCheck(e) {
     match.push(twoParents[0]);
     match.push(twoParents[1]);
     guesses = 2;
+    randomWinSound();
   } else {
     for (const item of twoParents) {
       setTimeout(() => {
@@ -78,7 +95,8 @@ function matchCheck(e) {
   twoTiles = [];
 
   if (match.length === 18) {
-    $(".game-rules").text("You win!");
+    blasters.play();
+    $(".update").text("The Force is strong with you !");
     $(".refresh").toggle("hide");
   }
 
@@ -86,7 +104,8 @@ function matchCheck(e) {
     for (const item of match) {
       item.classList.remove("rotate");
     }
-    $(".game-rules").text("Better Luck next time!");
+    theForce.play();
+    $(".update").text("Use the force Luke/Luca !");
     $(".refresh").toggle("hide");
     $(".tile-container").toggle("hide");
   }
@@ -114,8 +133,22 @@ $(".start-btn").click(function () {
   setTiles();
   $(".start-btn").toggle("hide");
   $(".tile-container").toggle("hide");
+  document.getElementById("my_audio").pause();
 });
 
 $(".refresh").click(function () {
   location.reload();
 });
+
+$(document).ready(function () {
+  setTimeout(() => {
+    $(".crawl-container").toggle("hide");
+    $("body").removeClass("body1");
+    $("body").addClass("body2");
+    $(".start-btn").toggle("hide");
+  }, 20000);
+});
+
+window.onload = function () {
+  document.getElementById("my_audio").play();
+};
