@@ -37,6 +37,7 @@ const strong = new Audio("./sounds/strong.mp3");
 
 const winSounds = [cocky, amaze, roar, strong];
 
+// func to choose a random sound on air match
 function randomWinSound() {
   let n = Math.floor(Math.random() * winSounds.length);
   const matchsound = winSounds[n].play();
@@ -129,6 +130,7 @@ tiles.addEventListener("click", function (e) {
   }
 });
 
+// event listener to start the game
 $(".start-btn").click(function () {
   setTiles();
   $(".start-btn").toggle("hide");
@@ -136,10 +138,12 @@ $(".start-btn").click(function () {
   document.getElementById("my_audio").pause();
 });
 
+// event listener to start the game over
 $(".refresh").click(function () {
   location.reload();
 });
 
+// event listerner on start
 $(document).ready(function () {
   setTimeout(() => {
     $(".crawl-container").toggle("hide");
