@@ -1,5 +1,5 @@
 body {
-  border: 20px solid #111d5e;
+  border: 20px groove #111d5e;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -63,12 +63,15 @@ p {
 }
 
 ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   background-color: #ffbd69;
   border-radius: 0.35rem;
   box-shadow: 5px 10px rgba(53, 53, 53, 0.3);
   margin: 0 auto;
   margin-top: 1rem;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   width: 55%;
 }
 @media (min-width: 768px) {
@@ -80,6 +83,14 @@ ul {
 li {
   list-style-type: none;
   color: #111d5e;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
