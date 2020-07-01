@@ -95,9 +95,16 @@ function matchCheck(e) {
   twoParents = [];
   twoTiles = [];
 
+  winOrLose();
+}
+
+// function to check whether game is won or lost
+function winOrLose() {
   if (match.length === 18) {
     blasters.play();
-    $(".update").text("The Force is strong with you !");
+    $(".update").text(
+      `The Force is strong with you ! It took you ${15 - chances} tries!`
+    );
     $(".refresh").toggle("hide");
   }
 
@@ -132,27 +139,22 @@ tiles.addEventListener("click", function (e) {
 
 // event listener to start the game
 $(".start-btn").click(function () {
-  setTiles();
-  $(".start-btn").toggle("hide");
-  $(".tile-container").toggle("hide");
-  document.getElementById("my_audio").pause();
+  document.getElementById("my_audio").play();
+  $(".will-crawl").addClass("crawl");
+  $(".crawl-container").removeClass("hide");
+
+  setTimeout(() => {
+    document.getElementById("my_audio").pause();
+    $(".crawl-container").addClass("hide");
+    $("body").removeClass("body1");
+    $("body").addClass("body2");
+    $(".start-btn").toggle("hide");
+    setTiles();
+    $(".tile-container").toggle("hide");
+  }, 20000);
 });
 
 // event listener to start the game over
 $(".refresh").click(function () {
   location.reload();
 });
-
-// event listerner on start
-$(document).ready(function () {
-  setTimeout(() => {
-    $(".crawl-container").toggle("hide");
-    $("body").removeClass("body1");
-    $("body").addClass("body2");
-    $(".start-btn").toggle("hide");
-  }, 20000);
-});
-
-window.onload = function () {
-  document.getElementById("my_audio").play();
-};
