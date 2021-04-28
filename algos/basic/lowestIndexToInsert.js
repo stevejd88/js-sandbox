@@ -3,21 +3,22 @@
 //  The returned value should be a number.
 
 function getIndexToIns(arr, num) {
-  let index,
-    newArr = [];
+  let newArr = arr.sort((a, b) => a - b);
 
-  // arr.forEach(number => {
-  //   if (number < )
-  // })
+  if (arr == false) {
+    return 0;
+  }
 
-  arr.forEach((number) => {
-    if (num > number) {
-      index = arr.indexOf(number);
+  for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i] === num) {
+      return i;
+    } else if (num > newArr[i] && num < newArr[i + 1]) {
+      return i + 1;
+    } else if (num > newArr[newArr.length - 1]) {
+      return arr.length;
     }
-  });
-  // return index + 1;
-  return newArr;
+  }
 }
 
-const output = getIndexToIns([2, 20, 10], 19);
+const output = getIndexToIns([2, 5, 10], 15);
 console.log(output);
