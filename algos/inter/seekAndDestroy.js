@@ -7,3 +7,10 @@ function destroyer(arr, ...args) {
 
 const output = destroyer([1, 2, 3, 1, 2, 3], 2, 3);
 console.log(output);
+
+// ============================================================
+// ===================== ANOTHER WAY ==========================
+// ============================================================
+// function destroyer(arr, ...valsToRemove) {
+//   return arr.filter((elem) => !valsToRemove.includes(elem));
+// }
